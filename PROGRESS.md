@@ -55,11 +55,11 @@
 | 3.1 | Accounting config: AR, AP, GL accounts mapped | ✅ Done | 1.2, 1.5 | l10n_th CoA installed; AR/AP defaults mapped |
 | 3.2 | FIFO Costing (per product category) | ✅ Done | 2.7, 3.1 | 13 categories set to FIFO (valuation=manual; real_time รอ stock accounts) |
 | 3.3 | **[CUSTOM] `sns_credit_limit`** (Block SO + Override approval + Follow-up) | ✅ Done (installed, QA pending) | 2.2, 3.1 | spec: specs/sns_credit_limit.md — installed, รอ `/qa` + `/verify` |
-| 3.4 | Bank Reconciliation + Auto Matching rules | ⬜ Todo | 3.1 | next session |
-| 3.5 | Customer Portal (แนบสลิป, ตรวจสถานะ) | ⬜ Todo | 3.1, 3.4 | next session |
-| 3.6 | PO Approval workflow (by budget) | ⬜ Todo | 1.6 | next session — ต้องใช้ OCA หรือ custom (ไม่มี Approvals app ใน Community) |
-| 3.7 | **[CUSTOM] `sns_report_sales`** (Quotation, Invoice, PO ตามรูปแบบบริษัท) | ⬜ Todo | 2.1, 3.6 | spec: specs/sns_report_sales.md (next session — ต้อง `/ui` mockup ก่อน) |
-| 3.8 | **[CUSTOM] `sns_thai_tax_report`** (ภ.พ.30, ภ.ง.ด.3/53/50ทวิ) | ⬜ Todo | 1.5, 3.1 | spec: specs/sns_thai_tax_report.md (next session) |
+| 3.4 | Bank Reconciliation + Auto Matching rules | ✅ Done | 3.1 | Auto "Perfect Match" active + custom "WHT 1% Customer Deduction (TH)" model — bank account numbers รอ migration (Phase 5) |
+| 3.5 | Customer Portal (แนบสลิป, ตรวจสถานะ) | ✅ Done (config) | 3.1, 3.4 | portal + auth_signup installed (b2c); invite flow รอ UAT กับ customer จริง (Phase 5) |
+| 3.6 | PO Approval workflow (by budget) | ✅ Done | 1.6 | Odoo built-in: po_double_validation=two_step, threshold 100,000 THB, po_lock=lock after confirm |
+| 3.7 | **[CUSTOM] `sns_report_sales`** (Quotation, Invoice, PO ตามรูปแบบบริษัท) | 🔄 Spec Done | 2.1, 3.6 | spec: specs/sns_report_sales.md — implementation รอ `/ui` mockup |
+| 3.8 | **[CUSTOM] `sns_thai_tax_report`** (ภ.พ.30, ภ.ง.ด.3/53/50ทวิ) | 🔄 Spec Done | 1.5, 3.1 | spec: specs/sns_thai_tax_report.md — implementation รอ template จากกรมสรรพากรของลูกค้า |
 
 **Phase 3 gate:** `/preflight phase4`
 
