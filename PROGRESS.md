@@ -69,17 +69,17 @@
 
 | # | งาน | Status | Depends | หมายเหตุ |
 |---|-----|--------|---------|---------|
-| 4.1 | Manufacturing (MRP) config: BOM, MO | ⬜ Todo | 2.4, 2.6 | |
-| 4.2 | Reordering Rules (Min/Max auto PO) | ⬜ Todo | 4.1 | |
-| 4.3 | MO Approval workflow | ⬜ Todo | 1.6, 4.1 | |
-| 4.4 | **[CUSTOM] `sns_report_mfg`** (MO report ตามรูปแบบบริษัท) | ⬜ Todo | 4.1 | spec: specs/sns_report_mfg.md |
-| 4.5 | Quality Control: Incoming QC (วัตถุดิบ) | ⬜ Todo | 2.4, 4.1 | |
-| 4.6 | Quality Control: In-Process QC (ระหว่างผลิต) | ⬜ Todo | 4.1, 4.5 | |
-| 4.7 | Quality Control: Outgoing QC (ก่อนส่ง) | ⬜ Todo | 2.8, 4.5 | |
-| 4.8 | HR module config (ทะเบียนพนักงาน, ลา) | ⬜ Todo | 1.6 | |
-| 4.9 | Payroll config (เงินเดือน, OT, ประกันสังคม, WHT) | ⬜ Todo | 4.8, 1.5 | |
-| 4.10 | **[CUSTOM] `sns_zkteco`** (Attendance integration) | ⬜ Todo | 4.8 | spec: specs/sns_zkteco.md |
-| 4.11 | Recruitment + Appraisal config | ⬜ Todo | 4.8 | |
+| 4.1 | Manufacturing (MRP) config: BOM, MO | ✅ Done | 2.4, 2.6 | mrp installed; enabled WO routings + byproducts + reception report groups; 3 WH มี manufacture_to_resupply=True |
+| 4.2 | Reordering Rules (Min/Max auto PO) | ⏸ On Hold | 4.1 | เปิดใช้ได้ระดับ product — รอ master data จริง (Phase 5 migration) |
+| 4.3 | **[CUSTOM] `sns_mo_approval`** MO Approval workflow | 🔄 Spec Done | 1.6, 4.1 | spec: specs/sns_mo_approval.md — single/double approval by qty+cost threshold |
+| 4.4 | **[CUSTOM] `sns_report_mfg`** (MO report ตามรูปแบบบริษัท) | 🔄 Spec Done | 4.1 | spec: specs/sns_report_mfg.md — รอ `/ui` mockup |
+| 4.5 | **[CUSTOM] `sns_quality_control`** Incoming QC (วัตถุดิบ) | 🔄 Spec Done | 2.4, 4.1 | spec: specs/sns_quality_control.md — รวม 3 QC points (Community ไม่มี quality) |
+| 4.6 | ^ In-Process QC (ระหว่างผลิต) | 🔄 Spec Done | 4.1, 4.5 | รวมใน sns_quality_control |
+| 4.7 | ^ Outgoing QC (ก่อนส่ง) | 🔄 Spec Done | 2.8, 4.5 | รวมใน sns_quality_control |
+| 4.8 | HR module config (ทะเบียนพนักงาน, ลา) | ✅ Done | 1.6 | hr + hr_holidays + hr_attendance installed; 7 departments, 11 job positions, 9 leave types (ลาป่วย/ลากิจ/ลาพักผ่อน/ลาคลอด/ลาบวช/ลาสมรส/วันหยุดนักขัตฤกษ์) |
+| 4.9 | Payroll config (เงินเดือน, OT, ประกันสังคม, WHT) | ⏸ On Hold | 4.8, 1.5 | **Community ไม่มี hr_payroll** — ต้องใช้ Enterprise หรือ OCA (l10n_th_hr_payroll) |
+| 4.10 | **[CUSTOM] `sns_zkteco`** (Attendance integration) | 🔄 Spec Done | 4.8 | spec: specs/sns_zkteco.md — pyzk pull every 15min |
+| 4.11 | Recruitment + Appraisal config | ⏸ On Hold | 4.8 | hr_recruitment demo data ขัดแย้ง → รอ install แบบ fresh; hr_appraisal = Enterprise only |
 
 **Phase 4 gate:** `/preflight phase5`
 
