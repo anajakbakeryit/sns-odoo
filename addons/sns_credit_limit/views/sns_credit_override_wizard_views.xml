@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sns_credit_override_wizard_form" model="ir.ui.view">
+        <field name="name">sns.credit.override.wizard.form</field>
+        <field name="model">sns.credit.override.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Credit Limit Exceeded">
+                <div class="alert alert-danger" role="alert">
+                    <strong>🚫 เกินวงเงินเครดิต (Credit Limit Exceeded)</strong>
+                    <br/>
+                    ลูกค้ามียอดค้างชำระ + คำสั่งซื้อที่รออยู่เกินกว่าวงเงินเครดิตที่กำหนดไว้
+                    หากต้องการ confirm ต้องให้ Sales Manager อนุมัติพร้อมเหตุผล
+                </div>
+                <group>
+                    <group string="Customer">
+                        <field name="partner_id" readonly="1"/>
+                        <field name="partner_credit_limit"/>
+                        <field name="partner_outstanding_ar"/>
+                        <field name="partner_pending_so"/>
+                    </group>
+                    <group string="This Order">
+                        <field name="order_id" readonly="1"/>
+                        <field name="order_amount"/>
+                        <field name="exceeds_by" decoration-danger="exceeds_by &gt; 0"/>
+                    </group>
+                </group>
+                <separator string="Override Reason (required)"/>
+                <field name="reason" nolabel="1" placeholder="เช่น ลูกค้าโอนเงินแล้ว รอ reconcile / ได้รับอนุมัติพิเศษจาก MD"/>
+                <footer>
+                    <button name="action_approve" string="Approve Override (Manager)" type="object" class="btn-primary"/>
+                    <button name="action_cancel" string="Cancel" type="object" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

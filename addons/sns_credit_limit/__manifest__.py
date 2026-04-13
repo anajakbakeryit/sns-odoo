@@ -1,0 +1,23 @@
+{
+    'name': 'SNS Credit Limit',
+    'version': '18.0.1.0.0',
+    'summary': 'Block SO confirmation when customer exceeds credit limit + manager override + overdue follow-up',
+    'author': 'foilss',
+    'website': 'https://www.foilss.com',
+    'license': 'LGPL-3',
+    'category': 'Accounting/Accounting',
+    'depends': ['sale_management', 'account', 'mail'],
+    'data': [
+        'security/ir.model.access.csv',
+        'data/mail_template.xml',
+        'data/ir_cron.xml',
+        'data/res_config_settings_data.xml',
+        'views/res_partner_views.xml',
+        'views/sale_order_views.xml',
+        'views/sns_credit_override_wizard_views.xml',
+        'views/res_config_settings_views.xml',
+    ],
+    'installable': True,
+    'application': False,
+    'auto_install': False,
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_inherit_sns_credit" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.sns.credit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='quotation_order_setting_container']" position="after">
+                <block title="Credit Limit (SNS)" name="sns_credit_limit_setting_container">
+                    <setting id="sns_credit_followup_setting"
+                             help="ส่ง follow-up email + activity ให้ Sales เมื่อ invoice เกินกำหนดชำระ">
+                        <field name="sns_credit_followup_enabled"/>
+                        <div class="content-group" invisible="not sns_credit_followup_enabled">
+                            <div class="mt16">
+                                <label for="sns_credit_followup_days" string="Follow-up หลังเกินกำหนด (วัน)"/>
+                                <field name="sns_credit_followup_days" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

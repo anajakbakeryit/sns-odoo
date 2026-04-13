@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_order_form_inherit_sns_credit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.sns.credit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="sns_credit_limit_display" readonly="1"/>
+                <field name="sns_credit_available_display" readonly="1"/>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <group string="Credit Override" invisible="not sns_credit_override_reason">
+                    <field name="sns_credit_override_user_id" readonly="1"/>
+                    <field name="sns_credit_override_reason" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

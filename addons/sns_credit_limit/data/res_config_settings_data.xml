@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="sns_credit_followup_days_param" model="ir.config_parameter">
+            <field name="key">sns_credit_limit.followup_days</field>
+            <field name="value">7</field>
+        </record>
+        <record id="sns_credit_followup_enabled_param" model="ir.config_parameter">
+            <field name="key">sns_credit_limit.followup_enabled</field>
+            <field name="value">True</field>
+        </record>
+    </data>
+</odoo>
