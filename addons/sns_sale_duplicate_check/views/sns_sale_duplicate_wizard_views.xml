@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sns_sale_duplicate_wizard_form" model="ir.ui.view">
+        <field name="name">sns.sale.duplicate.wizard.form</field>
+        <field name="model">sns.sale.duplicate.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Possible Duplicate Sales Order">
+                <div class="alert alert-warning" role="alert">
+                    <strong>⚠ พบ Sales Order ที่คล้ายกับออเดอร์นี้</strong>
+                    <br/>
+                    ตรวจสอบรายการด้านล่างก่อนยืนยัน หากเป็นคำสั่งซื้อใหม่จริงให้ระบุเหตุผลและกด Proceed
+                </div>
+                <group>
+                    <field name="order_id" readonly="1"/>
+                </group>
+                <separator string="Matched Orders"/>
+                <field name="matched_order_ids" readonly="1">
+                    <list string="Matched Orders">
+                        <field name="name"/>
+                        <field name="partner_id"/>
+                        <field name="date_order"/>
+                        <field name="amount_total"/>
+                        <field name="state"/>
+                    </list>
+                </field>
+                <separator string="Override Reason (required to proceed)"/>
+                <field name="override_reason" nolabel="1" placeholder="เช่น ลูกค้าสั่งเพิ่มรอบ 2 / คนละงวดส่งมอบ"/>
+                <footer>
+                    <button name="action_proceed" string="Proceed (Override)" type="object" class="btn-primary"/>
+                    <button name="action_cancel" string="Cancel" type="object" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>
